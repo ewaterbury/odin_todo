@@ -1,0 +1,343 @@
+:root {
+  --main-color: #e7eaf6;
+  --background-color: #38598b;
+  --accent-one: #a2a8d3;
+  --accent-two: #113f67;
+  --accent-three: #e7eaf6c6;
+}
+
+body {
+  /*Layout*/
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+
+  /*MBP*/
+  margin: 0px;
+
+  /*Style*/
+  background-color: var(--background-color);
+
+  /*Font*/
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
+/*Header--------------------------------------------------------*/
+header {
+  /*Layout*/
+  width: 100vw;
+  box-sizing: border-box;
+
+  /*MBP*/
+  border-bottom: 5px solid orangered;
+  padding: 15px;
+  box-shadow: 0px 0px 55px var(--accent-two);
+
+  /*Style*/
+  background-color: var(--main-color);
+}
+
+/*Main Dispalay Container--------------------------------------------------------*/
+.display_container {
+  /*Layout*/
+  height: 85vh;
+  display: grid;
+  grid-template-columns: repeat(1, minmax(40%, 400px));
+  grid-template-rows: repeat(9, 1fr);
+
+  /*MBP*/
+  margin: 5px;
+  margin-bottom: 5vh;
+}
+/*Project Selector Container--------------------------------------------------------*/
+.project_tab_container {
+  /*Layout*/
+  display: flex;
+
+  /*MBP*/
+  margin: 0px;
+  border: none;
+  padding: 0px;
+
+  /*Style*/
+  background-color: var(--background-color);
+}
+
+.project_tab {
+  /*Layout*/
+  width: calc(100% / 6);
+
+  /*MBP*/
+  margin: 0px;
+  border: 0px;
+  border-top: 4px solid var(--accent-two);
+  border-right: 4px solid var(--accent-two);
+  border-radius: 5px 5px 0px 0px;
+  padding: 0px;
+  box-shadow: 0px 0px 15px var(--accent-two);
+
+  /*Style*/
+  background-color: var(--main-color);
+}
+
+.project_tab:last-child {
+  /*MBP*/
+  border-radius: 5px 30px 0px 0px;
+}
+
+#new_project_button {
+  /*MBP*/
+  border-left: 4px solid var(--accent-two);
+  border-radius: 30px 5px 0px 0px;
+  box-shadow: 0px 0px 15px var(--accent-two);
+
+  /*Style*/
+  background-color: orangered;
+}
+
+/*Todo/Add Todo Form Display Container--------------------------------------------------------*/
+.app_container {
+  /*Layout*/
+  grid-area: 2/1/10/2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  /*MBP*/
+  margin: 0px;
+  border: 3px solid var(--accent-two);
+  border-radius: 0px 0px 15px 15px;
+  padding: 5px;
+  box-shadow: 0px 0px 15px var(--accent-two);
+
+  /*Style*/
+  background-color: var(--accent-one);
+}
+
+/*Add Todo Form Container--------------------------------------------------------*/
+.app_container > form {
+  /*Layout*/
+
+  /*MBP*/
+  margin: 0px;
+  border: 3px solid var(--accent-two);
+  border-radius: 5px;
+  padding: 0px;
+  box-shadow: 0px 0px 5px var(--accent-two);
+}
+
+.app_container > form > h3 {
+  /*Layout*/
+  text-align: center;
+
+  /*MBP*/
+  margin: 0px;
+  border: none;
+  border-bottom: 3px solid var(--accent-two);
+  padding: 5px;
+
+  /*Style*/
+  background-color: var(--main-color);
+}
+
+.app_container > form > fieldset {
+  /*Layout*/
+  display: flex;
+  flex-direction: column;
+
+  /*MBP*/
+  margin: 0px;
+  border: 0;
+  padding: 5px;
+
+  /*Style*/
+  background-color: var(--main-color);
+}
+.app_container > form > fieldset > p {
+  /*Layout*/
+  display: flex;
+
+  /*MBP*/
+  margin: 10px;
+}
+
+.app_container > form > fieldset > p > button {
+  /*Layout*/
+  flex-grow: 1;
+
+  /*MBP*/
+  margin: 0px;
+  border: 2px solid var(--accent-two);
+  border-radius: 5px;
+  padding: 5px;
+
+  /*Style*/
+  background-color: var(--accent-one);
+}
+
+/*Todo Window--------------------------------------------------------*/
+.app_container > ul {
+  /*Layout*/
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-grow: 1;
+
+  /*MBP*/
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 5px;
+
+  /*Style*/
+  list-style-type: none;
+}
+
+.app_container > ul > li {
+  /*Layout*/
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 5px;
+
+  /*MBP*/
+  border: 2px solid var(--accent-two);
+  padding: 5px;
+  box-shadow: 0px 0px 10px var(--accent-two);
+
+  /*Style*/
+  background-color: var(--main-color);
+}
+
+.app_container > ul > .priority {
+  /*Style*/
+  border-color: orangered;
+  box-shadow: 0px 0px 10px orangered;
+}
+
+.app_container > ul > .archived {
+  /*Style*/
+  text-decoration: line-through;
+  box-shadow: 0px 0px 15px var(--main-color);
+}
+
+.delete_todo_button {
+  /*Layout*/
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+  /*MBP*/
+  margin: 2px;
+  border: 2px solid var(--accent-two);
+  border-radius: 2px;
+
+  /*Style*/
+  background-color: orangered;
+}
+
+.archive_todo_button {
+  /*MBP*/
+  border: 2px solid var(--accent-two);
+  border-radius: 2px;
+
+  /*Style*/
+  background-color: orangered;
+}
+
+ul > li:not(:hover) {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+ul > li:not(:hover) span:nth-child(2),
+ul > li:not(:hover) .delete_todo_button,
+ul > li:not(:hover) .archive_todo_button {
+  display: none;
+}
+
+/*Delete Project Button--------------------------------------------------------*/
+#delete_project_button {
+  /*MBP*/
+  margin: 0px;
+  border: 2px solid var(--accent-two);
+  border-radius: 5px 5px 10px 10px;
+  padding: 5px;
+
+  /*Style*/
+  background-color: orangered;
+}
+
+/*New Project Form--------------------------------------------------------*/
+.new_project_form {
+  /*Layout*/
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 25vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /*MBP*/
+
+  border: 5px solid var(--accent-two);
+
+  /*Style*/
+  background-color: var(--main-color);
+}
+
+.new_project_form > button {
+  /*Layout*/
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+  /*MBP*/
+  margin: 2px;
+  border: 2px solid var(--accent-two);
+  border-radius: 2px;
+
+  /*Style*/
+  background-color: orangered;
+}
+
+.new_project_form > fieldset {
+  /*Layout*/
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  /*MBP*/
+  border: none;
+
+  /*Style*/
+  background-color: var(--accent-one);
+}
+
+.new_project_form > fieldset > p {
+  /*Layout*/
+
+  /*MBP*/
+  border: none;
+}
+
+.new_project_form > fieldset > button {
+  /*Layout*/
+  border: none;
+
+  /*MBP*/
+  margin: 2px;
+  border: 2px solid var(--accent-two);
+  border-radius: 2px;
+
+  /*Style*/
+  background-color: orangered;
+}
